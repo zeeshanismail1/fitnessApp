@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const WeightGainSchema = new mongoose.Schema({
   BreakFast: [
     {
+      Day: {
+        type: String,
+        default: "",
+      },
       time: {
         type: String,
         default: "",
@@ -14,6 +18,10 @@ const WeightGainSchema = new mongoose.Schema({
   ],
   Lunch: [
     {
+      Day: {
+        type: String,
+        default: "",
+      },
       time: {
         type: String,
         default: "",
@@ -26,6 +34,10 @@ const WeightGainSchema = new mongoose.Schema({
   ],
   Dinner: [
     {
+      Day: {
+        type: String,
+        default: "",
+      },
       time: {
         type: String,
         default: "",
@@ -38,6 +50,10 @@ const WeightGainSchema = new mongoose.Schema({
   ],
   Exercise: [
     {
+      Day: {
+        type: String,
+        default: "",
+      },
       time: {
         type: String,
         default: "",
