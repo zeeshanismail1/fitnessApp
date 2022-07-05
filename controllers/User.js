@@ -1,13 +1,19 @@
 const userSchema = require('../models/user')
 const { StatusCodes } = require('http-status-codes');
-const { token } = require('morgan');
+const { token } = require('morgan');                                         
+const getUsers = async (req, res) => {
+  const users = await userSchema.find({});
+  return res.status(StatusCodes.OK).json({ users });
+};
 const Login = async (req, res) => {
+
   const { email, password } = req.body;  
   if (!email || !password) {
    return res
       .status(StatusCodes.BAD_REQUEST)
       .json({ error: 'Please enter email and password' });
   }
+   
   const user = await userSchema.findOne({ email: email });
   //console.log(user)
   if (!user) {
@@ -39,7 +45,7 @@ const SignUp = async (req, res) => {
   return  res.status(200).json({ user:user });
 };
 
-module.exports = { Login, SignUp };
+module.exports = { Login, SignUp, getUsers };
 // const SignUp = async (req, res) => {
 //   const { role, user } = req.body;
 //   console.log(req.body);

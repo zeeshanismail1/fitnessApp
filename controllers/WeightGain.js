@@ -5,7 +5,7 @@ const getWeightGains = async (req, res) => {
 
   return res.status(StatusCodes.OK).json({ weightgain });
 };
-const postWeightGains = async (req, res) => {
+const postWeightGain = async (req, res) => {
   const weightgain = await WeightGain.create(req.body);
   return res.status(StatusCodes.CREATED).json({ weightgain });
 };
@@ -111,7 +111,7 @@ const deleteExercise = async (req, res) => {
 
 module.exports = {
   getWeightGains,
-  postWeightGains,
+  postWeightGain,
   deleteWeightGain,
   getWeightGain,
   editWeightGain,

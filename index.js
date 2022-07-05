@@ -14,6 +14,8 @@ app.use(cookieParser())
 app.use(cors());
 app.use('/api/v1', require('./routes/User'));
 app.use('/api/v1/WeightGain', require('./routes/WeightGain')); 
+app.use('/api/v1/WeightLoss', require('./routes/WeightLoss')); 
+app.use('/api/v1/NormalWeight', require('./routes/NormalWeight')); 
 app.use('/api/v1/mailsender',  require('./routes/MailSender'));
 
 const startServer = () => {

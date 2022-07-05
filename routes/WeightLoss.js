@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const {
-  getWeightGains,
-  postWeightGain,
-  deleteWeightGain,
-  getWeightGain,
-  editWeightGain,
+  getAllWeightLoss,
+  postWeightLoss,
+  deleteWeightLoss,
+  getWeightLoss,
+  editWeightLoss,
   getBreakFast,
   postBreakFast,
   deleteBreakFast,
@@ -18,25 +18,25 @@ const {
   getExercise,
   postExercise,
   deleteExercise,
-} = require('../controllers/WeightGain');
-router.get('/', getWeightGains);
-router.post('/',  postWeightGain); 
+} = require('../controllers/WeightLoss');
+router.get('/', getAllWeightLoss);
+router.post('/',  postWeightLoss); 
 // apies for admin to apply crud on docter
-router.delete('/:id', deleteWeightGain);
-router.get('/:id', getWeightGain);
-router.patch('/:id', editWeightGain);
-router.delete('/:id', deleteWeightGain);
+router.delete('/:id', deleteWeightLoss);
+router.get('/:id', getWeightLoss);
+router.patch('/:id', editWeightLoss);
+router.delete('/:id', deleteWeightLoss);
 router.get('/:id/BreakFast',  getBreakFast);
 router.post('/:id/BreakFast',  postBreakFast);
-router.delete('/:weightgainId/BreakFast/:BreakFastId', deleteBreakFast)
+router.delete('/:weightlossId/BreakFast/:BreakFastId', deleteBreakFast)
 // router.patch('/BreakFast/:id',  updateBreakFast);
 router.get('/:id/Lunch',  getLunch);
 router.post('/:id/Lunch',  postLunch);
-router.delete('/:weightgainId/Lunch/:LunchId', deleteLunch)
+router.delete('/:weightlossId/Lunch/:LunchId', deleteLunch)
 router.get('/:id/Dinner',  getDinner);
 router.post('/:id/Dinner',  postDinner);
-router.delete('/:weightgainId/Dinner/:DinnerId', deleteDinner)
+router.delete('/:weightlossId/Dinner/:DinnerId', deleteDinner)
 router.get('/:id/Exercise',  getExercise);
 router.post('/:id/Exercise',  postExercise);
-router.delete('/:weightgainId/Exercise/:ExerciseId', deleteExercise)
+router.delete('/:weightlossId/Exercise/:ExerciseId', deleteExercise)
 module.exports = router;
